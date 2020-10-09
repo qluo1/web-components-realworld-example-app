@@ -1,4 +1,4 @@
-var Navigo = require('navigo');
+import Navigo from 'navigo';
 import {CLoginComponent} from "../pages/login.comp";
 import {AuthDefender} from "../auth/auth-defender";
 import {SettingsComponent} from "../pages/settings.comp";

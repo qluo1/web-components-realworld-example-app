@@ -19,3 +19,4 @@ build
 dist
 
 client/config.js
+public/*.js*
