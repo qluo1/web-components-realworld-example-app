@@ -47,7 +47,7 @@ export class RouterHandler {
 
         this.router.on(() => {
             RouterHandler.inject(new HomeComponent())
-        }).resolve();
+        });
 
         this.router.on(
         '/article/:slug',
@@ -55,7 +55,7 @@ export class RouterHandler {
             import('../pages/article-preview.comp.js').then((Component) =>
                 RouterHandler.inject(new Component.default(params))
             );
-        }).resolve();
+        });
 
         routes.forEach(route => {
             this.router.on(
@@ -73,8 +73,10 @@ export class RouterHandler {
                         }
                     }
                 }
-            ).resolve();
+            );
         });
+
+        this.router.resolve();
 
     }
 }

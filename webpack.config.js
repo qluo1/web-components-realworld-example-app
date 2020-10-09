@@ -11,8 +11,11 @@ module.exports = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.IgnorePlugin(/vertx/)
   ],
+  devtool: 'inline-source-map',
   devServer: {
     hot: true,
+    host: '0.0.0.0',
+    disableHostCheck: true,
     contentBase: './',
     historyApiFallback: true
   }
