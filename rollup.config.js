@@ -10,7 +10,7 @@ const plugins = [
    watch: true
   }),
   commonjs(),
-  resolve(),
+  resolve({preferBuiltins: false}), // build in failed
   sourcemaps(),
   process.env.NODE_ENV  =="production" && terser()
 ];
