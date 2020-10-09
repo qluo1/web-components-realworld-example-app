@@ -9,8 +9,8 @@ const plugins = [
    targets: ["public/*", "!public/index.html"],
    watch: true
   }),
-  resolve({ extensions: [".js"] }),
   commonjs(),
+  resolve(),
   sourcemaps(),
   process.env.NODE_ENV  =="production" && terser()
 ];

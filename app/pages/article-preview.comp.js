@@ -1,5 +1,5 @@
 import {Http} from "../http/http";
-var markdown = require("markdown").markdown;
+import  {parse as toHTML} from 'markdown';
 
 class ArticlePreviewComponent extends HTMLElement {
     constructor(params) {
@@ -67,7 +67,7 @@ class ArticlePreviewComponent extends HTMLElement {
     }
 
     updateArticleContent() {
-        this.$articleBody.innerHTML = markdown.toHTML(this.article.body);
+        this.$articleBody.innerHTML = toHTML(this.article.body);
     }
 
 
@@ -75,28 +75,28 @@ class ArticlePreviewComponent extends HTMLElement {
         return `
               <div class="article-page">
                 <article-preview-banner following="" title="Loading .." username=".." date=".." image="https://static.productionready.io/images/smiley-cyrus.jpg" favorites-count="Loading ..." ></article-preview-banner>
-                
+
                   <div class="container page">
-                
+
                     <div class="row article-content">
                       <div id="article-body" class="col-md-12">
                         Loading ...
                       </div>
                     </div>
-                
+
                     <hr />
-                
+
                     <div class="row">
-                
+
                       <div class="col-xs-12 col-md-8 offset-md-2">
                         <comment-create></comment-create>
                         <comments-container slug="${this.slug}"></comments-container>
                       </div>
-                
+
                     </div>
-                
+
                   </div>
-                
+
                 </div>
         `;
     }
